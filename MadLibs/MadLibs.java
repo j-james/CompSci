@@ -94,6 +94,7 @@ public class MadLibs {
                 }
             }
             output.println();
+            lineScan.close();
         }
     }
 
