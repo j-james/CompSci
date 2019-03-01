@@ -17,6 +17,30 @@ public class PictureTester
     beach.explore();
   }
 
+  public static void testKeepOnlyBlue()
+  {
+    Picture dropbear = new Picture("someFunPicture.jpg");
+    dropbear.explore();
+    dropbear.keepOnlyBlue();
+    dropbear.explore();
+  }
+
+  public static void testNegate()
+  {
+    Picture dropbear = new Picture("someFunPicture.jpg");
+    dropbear.explore();
+    dropbear.negate();
+    dropbear.explore();
+  }
+
+  public static void testGreyscale()
+  {
+    Picture dropbear = new Picture("someFunPicture.jpg");
+    dropbear.explore();
+    dropbear.greyscale();
+    dropbear.explore();
+  }
+
   /** Method to test mirrorVertical */
   public static void testMirrorVertical()
   {
@@ -24,6 +48,30 @@ public class PictureTester
     caterpillar.explore();
     caterpillar.mirrorVertical();
     caterpillar.explore();
+  }
+
+  public static void testMirrorVerticalRightToLeft()
+  {
+    Picture dropbear = new Picture("someFunPicture.jpg");
+    dropbear.explore();
+    dropbear.mirrorVerticalRightToLeft();
+    dropbear.explore();
+  }
+
+  public static void testMirrorHorizontal()
+  {
+    Picture dropbear = new Picture("someFunPicture.jpg");
+    dropbear.explore();
+    dropbear.mirrorHorizontal();
+    dropbear.explore();
+  }
+
+  public static void testMirrorHorizontalBotToTop()
+  {
+    Picture dropbear = new Picture("someFunPicture.jpg");
+    dropbear.explore();
+    dropbear.mirrorHorizontalBotToTop();
+    dropbear.explore();
   }
 
   /** Method to test mirrorTemple */
@@ -51,30 +99,6 @@ public class PictureTester
     swan.explore();
   }
 
-  public static void testKeepOnlyBlue()
-  {
-    Picture dropbear = new Picture("someFunPicture.jpg");
-    dropbear.explore();
-    dropbear.keepOnlyBlue();
-    dropbear.explore();
-  }
-
-  public static void testNegate()
-  {
-    Picture dropbear = new Picture("someFunPicture.jpg");
-    dropbear.explore();
-    dropbear.negate();
-    dropbear.explore();
-  }
-
-  public static void testGreyscale()
-  {
-    Picture dropbear = new Picture("someFunPicture.jpg");
-    dropbear.explore();
-    dropbear.greyscale();
-    dropbear.explore();
-
-  }
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
@@ -90,6 +114,10 @@ public class PictureTester
     //testGreyscale();
     //testFixUnderwater();
     //testMirrorVertical();
+    //testMirrorVerticalRightToLeft();
+    //testMirrorHorizontal();
+    //testMirrorHorizontalBotToTop();
+
     //testMirrorTemple();
     //testMirrorArms();
     //testMirrorGull();
