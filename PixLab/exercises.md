@@ -21,18 +21,18 @@ your student folder.
 |X|A4|1| IntArrayWorker.java  | getCount
 |X|  |2|                      | getLargest
 |X|  |3|                      | getColTotal
-| |A5|3|                      | keepOnlyBlue
-| |  |4|                      | negate
-| |  |5|                      | grayScale
+|X|A5|3| Picture.java         | keepOnlyBlue
+|X|  |4|                      | negate
+|X|  |5|                      | grcale
 | |  |6|                      | fixUnderwater
-| |A6|1|                      | mirrorVerticalRightToLeft
-| |  |2|                      | mirrorHorizontal
-| |  |3|                      | mirrorHorizontalBotToTop
+|X|A6|1| Picture.java         | mirrorVerticalRightToLeft
+|X|  |2|                      | mirrorHorizontal
+|X|  |3|                      | mirrorHorizontalBotToTop
 | |  |4|                      | mirrorDiagonal
-| |A7|1|                      | mirrorTemple
-| |  |2|                      | mirrorArms
-| |  |3|                      | mirrorGull
-| |A8|1| Picture.java         | copy|
-| |  |2|                      | myCollage
-| |A9|1| Picture.java         | edgeDetection|
+|X|A7|1|                      | mirrorTemple
+|X|  |2|                      | mirrorArms
+|X|  |3|                      | mirrorGull
+|X|A8|1| Picture.java         | copy
+|X|  |2|                      | myCollage
+| |A9|1| Picture.java         | edgeDetection
 | |  |2|                      | edgeDetection2
