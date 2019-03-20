@@ -1,14 +1,24 @@
+/** Trio.java
+ *
+ * Trio.java `implements` the MenuItem interface. 
+ * This means it _must_ have the abstract methods specificed in `MenuItem.java`.
+ *
+ * It also contains a contructor to be able to use parameters.
+ */
+
 public class Trio implements MenuItem
 {
     public Sandwich sandwich;
     public Salad salad;
     public Drink drink;
     
-    public Trio (Sandwich a, Salad b, Drink c)
+    public Trio (Sandwich sandwich, Salad salad, Drink drink)
     {
-        sandwich = a;
-        salad = b;
-        drink = c;
+        // The `this` keyword lets you use the same name for variables up above in the class
+        // and the ones passed through the constructor.
+        this.sandwich = sandwich;
+        this.salad = salad;
+        this.drink = drink;
     }
     
     public String getName()

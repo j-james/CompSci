@@ -1,3 +1,11 @@
+/** TrioTest.java
+ *
+ * This class is just a test. 
+ * It doesn't implement or extend anything, only containing a main method.
+ *
+ * Inside the main method are several example calls to the other classes in this folder.
+ */
+
 public class TrioTest
 {
     public static void main(String[] args)
