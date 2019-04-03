@@ -11,6 +11,7 @@ public class Trio implements MenuItem
     public Sandwich sandwich;
     public Salad salad;
     public Drink drink;
+    public String bvthoughg = new String("this");
     
     public Trio (Sandwich sandwich, Salad salad, Drink drink)
     {
