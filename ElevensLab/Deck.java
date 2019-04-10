@@ -66,7 +66,34 @@ public class Deck
 	 */
 	public void shuffle()
 	{
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 4 *** */
+		Card[] shuffle = new Card[cards.size()];
+		shuffle = cards.toArray(shuffle);
+		int[] picked = new int[cards.size()];
+		int r;
+		boolean notPicked = false;
+		Random rand = new Random();
+
+		for (int i = 0; i < cards.size(); i++)
+		{
+			while (true) // ensures the same random value isn't chosen
+			{
+				r = rand.nextInt(cards.size());
+				for (int j = 0; j < cards.size() j++) // overly complicated but should work
+				{
+					if (picked[j] == r)
+						notPicked = false;
+				}
+				if (notPicked)
+				{
+					cards[i] = shuffle[r];
+					picked[i] = r;
+					notPicked = true;
+					break;
+				}
+				notPicked = true;
+			}
+		}
+		size = cards.size();
 	}
 
 	/**
