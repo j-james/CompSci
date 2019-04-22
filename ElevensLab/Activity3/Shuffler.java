@@ -54,10 +54,20 @@ public class Shuffler
 	public static void perfectShuffle(int[] values)
 	{
 		int[] shuffled = new int[values.length];
+		int k = 0;
 		for (int i = 0; i < values.length/2; i++)
-			shuffled[i] = values[i*2];
-		for (int k = 0; k < values.length/2; k++)
-			shuffled[k + values.length/2] = values[1 + k*2];
+		{
+			shuffled[i] = values[k];
+			k += 2;
+		}
+		k = 1;
+		for (int j = values.length/2; j < values.length; j++)
+		{
+			shuffled[j] = values[k];
+			k += 2;
+		}
+		for (int l = 0; l < values.length; l++)
+			values = shuffled;
 	}
 	/**
 	 * Apply an "efficient selection shuffle" to the argument.
@@ -79,13 +89,16 @@ public class Shuffler
 		{
 			while (true)
 			{
-				r = rand.nextInt(52);
+				r = rand.nextInt(values.length);
 				if (values[r] != -1)
 				{
 					shuffled[i] = values[r];
+					values[r] = -1;
 					break;
 				}
 			}
 		}
+		for (int j = 0; j < values.length; j++)
+			values[j] = shuffled[j];
 	}
 }
