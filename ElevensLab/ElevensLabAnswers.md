@@ -1,11 +1,15 @@
 # Elevens Lab - Questions
 
 ## A1: Design and Create a Card Class
+
 No questions.
 
 ## A2: Initial Design of a Deck Class
+
 1) Explain in your own words the relationship between a `deck` and a `card`.
+
     1) A deck `has-a` card.
+
 2) Consider the deck initialized with the statements below.
     How many cards does the deck contain?
 
@@ -18,12 +22,7 @@ No questions.
 
     1) The deck contains six cards.
 
-3) The game of Twenty-One is played with a deck of fifty-two cards.
-    Ranks run from ace (highest) down to deuce (lowest).
-    Suits are spades, hearts, diamonds, and clubs as in many other games.
-    A face card has point value ten; an ace has point value eleven; point values
-    for two, ..., ten are two, ..., ten respectively. Specify the contents of the
-    `ranks`, `suits`, and `pointValues` array so that the statement
+3) The game of Twenty-One is played with a deck of fifty-two cards. Ranks run from ace (highest) down to deuce (lowest). Suits are spades, hearts, diamonds, and clubs as in many other games. A face card has point value ten; an ace has point value eleven; point values for two, ..., ten are two, ..., ten respectively. Specify the contents of the `ranks`, `suits`, and `pointValues` array so that the statement
 
     ```java
     Deck d = new Deck (ranks, suits, pointValues);
@@ -40,46 +39,40 @@ No questions.
     ```
 
 4) Does the order of elements of the `ranks`, `suits`, and `pointValues` arrays matter?
+
     1) The order of elements in `suits` doesn't matter, but `ranks` has to correspond to `pointValues`.
 
 ## A3: Shuffling the Cards in a Deck
-1) Write a static method named `flip` that simulates a flip of a weighted coin
-    by returning either "`heads`" or "`tails`" each time it is called.
-    The coin is twice as likely to turn up heads as tails.
-    Thus, `flip` should return "`heads`" about twice as often as it returns "`tails`".
 
-```java
-public static String flip()
-{
-    Random rand = new Random();
+1) Write a static method named `flip` that simulates a flip of a weighted coin by returning either "`heads`" or "`tails`" each time it is called. The coin is twice as likely to turn up heads as tails. Thus, `flip` should return "`heads`" about twice as often as it returns "`tails`".
 
-    if (rand.nextInt(3) == 0)
-        return "tails";
-    else
-        return "heads";
-}
-```
-
-2) Write a static method named `arePermutations` that, given two `int` arrays of
-    the same length but with no duplicate elements, returns `true` if one array
-    is a permutation of the other (i.e., the arrays differ in only how their
-    contents are arranged. Otherwise, it should return false.)
-
-```java
-public static boolean arePermutations(int[] arrayOne, int[] arrayTwo)
-{
-    for (int i = 0; i < arrayOne.length; i++)
+    ```java
+    public static String flip()
     {
-        productOne *= arrayOne[i];
-        productTwo *= arrayTwo[i];
-    }
-    return productOne == productTwo;
-}
-```
+        Random rand = new Random();
 
-3) Suppose that the initial contents of the `values` array in `Shuffler.java` are `{1, 2, 3, 4}`.
-    For what sequence of random integers would the efficients selection shuffle
-    change `values` to contain `{4, 3, 2, 1}`?
+        if (rand.nextInt(3) == 0)
+            return "tails";
+        else
+            return "heads";
+    }
+    ```
+
+2) Write a static method named `arePermutations` that, given two `int` arrays of the same length but with no duplicate elements, returns `true` if one array is a permutation of the other (i.e., the arrays differ in only how their contents are arranged. Otherwise, it should return false.)
+
+    ```java
+    public static boolean arePermutations(int[] arrayOne, int[] arrayTwo)
+    {
+        for (int i = 0; i < arrayOne.length; i++)
+        {
+            productOne *= arrayOne[i];
+            productTwo *= arrayTwo[i];
+        }
+        return productOne == productTwo;
+    }
+    ```
+
+3) Suppose that the initial contents of the `values` array in `Shuffler.java` are `{1, 2, 3, 4}`. For what sequence of random integers would the efficients selection shuffle change `values` to contain `{4, 3, 2, 1}`?
 
     1) `{3, 2, 1, 0}`.
 
@@ -87,6 +80,7 @@ public static boolean arePermutations(int[] arrayOne, int[] arrayTwo)
 No questions.
 
 ## A5: Testing with Assertations (Optional)
+
 1) Buggy 1:
 
     The problem is in the `isEmpty` method of `Deck.java`.
@@ -153,6 +147,7 @@ I won two out of five.
     Yes, it does.
 
 4) `ElevensBoard.java` contains three helper methods. These helper methods are `private` because they are only called from the `ElevensBoard` class.
+
     a) Where is the `dealMyCards` method called in `ElevensBoard`?
 
     In its constructor and its `newGame()` function.
@@ -196,3 +191,17 @@ I won two out of five.
 3) Now examine the files `Board.java` and `ElevensBoard.java`, found in the __Activity8 Starter Code__ directory. Identify the `abstract` methods in `Board.java`. See how those methods are implemented in `ElevensBoard`. Do they cover all the differences between _Elevens_, _Thirteens_, and _Tens_ as discussed in question 1? Why or why not?
 
     Yes. All of the functions that stay identical in all three games are implemented in `Board.java`. All of the functions that are implemented differently per game are written as abstract methods.
+
+## A9: Implementing the Elevens Board
+
+1) The size of the board is one of the differences between _Elevens_ and _Thirteens_. Why is `size` not an abstract method?
+
+    1) `size` is not an abstract method because `size` is already a parameter.
+
+2) Why are there no abstract methods dealing with the selection of the cards to be removed or replaced in the array `cards`?
+
+    1) Abstract methods are for functions that differ per implementation. Removing or replacing cards is universal regardless of the size of the deck.
+
+3) Another way to create 'IS-A' relationships is by implementing interfaces. Suppose that instead of creating an `abstract` `Board` class, we created the following `Board` interface, and had `ElevensBoard` implement it. Would this new scheme allow the Elevens GUI to call `isLegal` and `anotherPlayIsPossible` polymorphically? Would this alternate design work as well as the `abstract` `Board` class design? Why or why not?
+
+    1) `isLegal` and `anotherPlayIsPossible` still could be called polymorphically. The alternate design would work as well as the `abstract` `Board` design, but would require all of the methods to be written for every implementation.
